@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, Space_Mono, Playfair_Display } from "next/font/google";
-import { NoiseOverlay } from "@/components/ui/NoiseOverlay";
 import "./globals.css";
 
 const inter = Inter({
@@ -32,8 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceMono.variable} ${playfair.variable}`}>
-      <body className="antialiased min-h-screen flex flex-col bg-[var(--color-hh-dark-green)] text-white selection:bg-[var(--color-hh-yellow)] selection:text-[var(--color-hh-dark-green)] overflow-x-hidden">
-        <NoiseOverlay />
+      <body className="antialiased min-h-screen flex flex-col bg-[var(--color-hh-dark-green)] text-white selection:bg-[var(--color-hh-pink)] selection:text-white overflow-x-hidden">
         {children}
       </body>
     </html>

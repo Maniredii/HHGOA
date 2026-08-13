@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HHGOA
+# ⚡ HH Goa 2026 — ID Studio
 
-## Getting Started
+<p align="center">
+  <img src="https://img.shields.io/badge/HH%20GOA-2026-0B6B3A?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/STATUS-LIVE-FF1493?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/NEXT.JS-15-000000?style=for-the-badge&logo=next.js" />
+  <img src="https://img.shields.io/badge/TYPESCRIPT-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/TAILWINDCSS-4.x-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+</p>
 
-First, run the development server:
+<p align="center">
+  <strong>Turn your photo into your HH Goa 2026 Builder Identity.</strong>
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<p align="center">
+  Upload → Customize → Generate → Download → Share
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<p align="center">
+  <a href="YOUR_LIVE_URL">
+    <img src="https://img.shields.io/badge/🚀%20LIVE%20DEMO-Visit%20Studio-FF1493?style=for-the-badge" />
+  </a>
+  &nbsp;
+  <a href="https://x.com/intent/post?text=I%20just%20created%20my%20HH%20Goa%202026%20Builder%20ID.%20%23FrameInGoa">
+    <img src="https://img.shields.io/badge/𝕏-Share%20to%20X-000000?style=for-the-badge&logo=x" />
+  </a>
+</p>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌴 What is HH Goa ID Studio?
 
-## Learn More
+**HH Goa ID Studio** is a fast, mobile-first identity generator built for the **Hacker House Goa 2026 Frame / ID Card Challenge**.
 
-To learn more about Next.js, take a look at the following resources:
+It transforms an ordinary photo into a personalized HH Goa 2026 visual identity in seconds.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Choose your format, add your builder details, customize the visual treatment, and generate a share-ready graphic.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+> **Your photo. Your stack. Your builder identity.**
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ✨ Experience
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+        YOUR PHOTO
+             │
+             ▼
+      ┌──────────────┐
+      │  HH GOA ID   │
+      │    STUDIO    │
+      └──────┬───────┘
+             │
+      ┌──────┼───────┐
+      ▼      ▼       ▼
+     PFP     ID     TEAM
+      │      │       │
+      └──────┼───────┘
+             ▼
+       CUSTOMIZE
+             │
+      ┌──────┼──────────┐
+      ▼      ▼          ▼
+    Theme  Treatment   Identity
+      │      │          │
+      └──────┼──────────┘
+             ▼
+        GENERATE ⚡
+             │
+       ┌─────┴─────┐
+       ▼           ▼
+    DOWNLOAD     SHARE 𝕏

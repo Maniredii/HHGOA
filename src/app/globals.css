@@ -69,11 +69,15 @@ body {
     --foreground: var(--color-sand-fg);
   }
   
-  .glass-panel {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
+  .neo-card {
+    @apply bg-white border-2 border-[#022b13] shadow-[8px_8px_0px_0px_#f5c842] rounded-xl overflow-hidden;
   }
   
-  .glass-input {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 text-white placeholder:text-white/30 focus-visible:ring-1 focus-visible:ring-[var(--color-hh-yellow)] focus-visible:border-[var(--color-hh-yellow)] transition-all shadow-inner;
+  .neo-input {
+    @apply bg-[var(--color-hh-cream)] border-2 border-[#022b13] text-[#022b13] placeholder:text-[#022b13]/40 focus-visible:outline-none focus-visible:ring-0 focus-visible:border-[var(--color-hh-pink)] focus-visible:shadow-[4px_4px_0px_0px_var(--color-hh-pink)] transition-all shadow-[4px_4px_0px_0px_#022b13] rounded-none;
+  }
+
+  .neo-button {
+    @apply bg-[var(--color-hh-pink)] text-white border-2 border-[#022b13] shadow-[4px_4px_0px_0px_#022b13] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#022b13] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all font-bold uppercase tracking-widest rounded-none;
   }
 }
