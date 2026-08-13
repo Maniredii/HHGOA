@@ -1,26 +1,79 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-hh-dark-green: #022b13; /* Even darker green for background */
+  --color-hh-green: #1f5c38;
+  --color-hh-green-sec: #026836;
+  --color-hh-cream: #f4f0e6;
+  --color-hh-cream-dim: rgba(244, 240, 230, 0.7);
+  --color-hh-yellow: #f5c842;
+  --color-hh-pink: #FF0080;
+  --color-hh-black: #09090b;
+
+  --color-goa-bg: var(--color-hh-cream);
+  --color-goa-fg: var(--color-hh-dark-green);
+  --color-night-bg: var(--color-hh-green-sec);
+  --color-night-fg: var(--color-hh-cream);
+  --color-sand-bg: #ece5d3;
+  --color-sand-fg: var(--color-hh-dark-green);
+
+  --font-sans: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-space-mono), "Space Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-serif: var(--font-playfair), "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --animate-ticker: ticker 20s linear infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+:root {
+  --background: var(--color-hh-dark-green);
+  --foreground: var(--color-hh-cream);
+}
+
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  .theme-goa {
+    --background: var(--color-goa-bg);
+    --foreground: var(--color-goa-fg);
+  }
+  .theme-night {
+    --background: var(--color-night-bg);
+    --foreground: var(--color-night-fg);
+  }
+  .theme-sand {
+    --background: var(--color-sand-bg);
+    --foreground: var(--color-sand-fg);
+  }
+  
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
+  }
+  
+  .glass-input {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 text-white placeholder:text-white/30 focus-visible:ring-1 focus-visible:ring-[var(--color-hh-yellow)] focus-visible:border-[var(--color-hh-yellow)] transition-all shadow-inner;
+  }
 }
