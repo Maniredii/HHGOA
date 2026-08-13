@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Studio } from "@/components/studio/Studio";
 import { PalmDecoration } from "@/components/ui/PalmDecoration";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { Theme } from "@/lib/background/backgroundConfig";
+import { DynamicBackdrop } from "@/components/background/DynamicBackdrop";
 import { Sparkles, ArrowRight, ExternalLink } from "lucide-react";
 
 /* ═══════════════════════════════════════════
@@ -45,7 +47,12 @@ export default function PageClient() {
   }, []);
 
   return (
-    <main className="flex-1 flex flex-col items-center overflow-x-hidden bg-[var(--color-hh-dark-green)] relative selection:bg-[var(--color-hh-pink)] selection:text-white">
+    <main className="flex-1 flex flex-col items-center bg-transparent relative selection:bg-[var(--color-hh-pink)] selection:text-white overflow-x-clip min-h-screen">
+      
+      {/* ═══════════════════════════════════════════
+          DYNAMIC SIGNAL FIELD BACKDROP
+          ═══════════════════════════════════════════ */}
+      <DynamicBackdrop theme="goa" />
 
       {/* ═══════════════════════════════════════════
           STICKY NAVBAR
@@ -250,9 +257,13 @@ export default function PageClient() {
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             >
               <div className="w-full h-2/3 bg-[#022b13] border-2 border-black rounded-sm overflow-hidden relative">
-                {/* Simulated tropical photo */}
-                <div className="absolute inset-0 sunset-gradient opacity-60" />
-                <div className="absolute bottom-3 left-3 font-mono text-[8px] text-[var(--color-hh-yellow)] uppercase tracking-widest font-bold">
+                <img 
+                  src="/hero-id.png" 
+                  alt="Builder ID sample" 
+                  className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700 opacity-90"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
+                <div className="absolute bottom-3 left-3 font-mono text-[8px] text-[var(--color-hh-yellow)] uppercase tracking-widest font-bold z-10">
                   BUILDER ID
                 </div>
               </div>
@@ -268,8 +279,13 @@ export default function PageClient() {
               animate={{ rotate: [-5, -7, -5] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
             >
-              <div className="w-[170px] h-[170px] bg-[#022b13] border-2 border-black rounded-full relative overflow-hidden">
-                <div className="absolute inset-0 tropical-gradient opacity-40" />
+              <div className="w-[170px] h-[170px] bg-[#022b13] border-2 border-black rounded-full relative overflow-hidden group">
+                <img 
+                  src="/hero-pfp.png" 
+                  alt="PFP sample" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 border-[6px] border-[var(--color-hh-pink)] rounded-full pointer-events-none mix-blend-overlay" />
               </div>
               <div className="absolute bottom-3 right-3 bg-[var(--color-hh-yellow)] border-2 border-black px-2 py-1 font-mono text-[9px] font-bold text-black rotate-12 shadow-[2px_2px_0px_0px_#FF0080]">
                 PFP FRAME
@@ -321,7 +337,7 @@ export default function PageClient() {
       {/* ═══════════════════════════════════════════
           STUDIO SECTION
           ═══════════════════════════════════════════ */}
-      <section id="studio" className="w-full relative z-20 py-20 lg:py-28 overflow-hidden">
+      <section id="studio" className="w-full relative z-20 py-20 lg:py-28">
         {/* Ambient glow behind studio */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div
@@ -334,13 +350,18 @@ export default function PageClient() {
         <PalmDecoration side="right" variant="minimal" className="top-20 hidden xl:block" />
         <PalmDecoration side="left" variant="minimal" className="top-40 hidden xl:block" />
 
-        <Studio />
+        {/* Readability Isolation Layer for Studio */}
+        <div className="absolute inset-0 bg-black/40 pointer-events-none rounded-[3rem] mx-4 lg:mx-8 blur-3xl z-0" />
+
+        <div className="relative z-10">
+          <Studio />
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════════
           EDITORIAL — FOUR DAYS
           ═══════════════════════════════════════════ */}
-      <section className="w-full bg-[var(--color-hh-cream)] text-black py-24 lg:py-32 relative z-20 overflow-hidden">
+      <section className="w-full bg-[var(--color-hh-cream)]/95 backdrop-blur-md text-black py-24 lg:py-32 relative z-20 overflow-hidden">
         {/* Subtle texture */}
         <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
           style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }}
@@ -384,7 +405,7 @@ export default function PageClient() {
       {/* ═══════════════════════════════════════════
           METRICS SECTION
           ═══════════════════════════════════════════ */}
-      <section className="w-full bg-[var(--color-hh-yellow)] text-black py-24 relative z-20 overflow-hidden">
+      <section className="w-full bg-[var(--color-hh-yellow)]/95 backdrop-blur-md text-black py-24 relative z-20 overflow-hidden">
         {/* Animated gradient overlay */}
         <div className="absolute inset-0 opacity-10 pointer-events-none tropical-gradient" />
 
@@ -411,7 +432,7 @@ export default function PageClient() {
       {/* ═══════════════════════════════════════════
           FOOTER
           ═══════════════════════════════════════════ */}
-      <footer className="w-full bg-[#011a0b] text-white py-16 relative z-20 overflow-hidden">
+      <footer className="w-full bg-transparent text-white py-16 mt-20 relative z-20 overflow-hidden">
         {/* Palm decoration */}
         <PalmDecoration side="right" variant="minimal" className="bottom-0 opacity-5" />
 

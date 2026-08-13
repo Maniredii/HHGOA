@@ -7,7 +7,7 @@ import { RotateCcw } from "lucide-react";
 
 interface EditorProps {
   imageUrl: string | null;
-  format: "pfp" | "id" | "team" | "vibes" | "sunset" | "postcard" | "adventure";
+  format: "pfp" | "id" | "team";
   theme: "goa" | "night" | "sand";
   treatment: "natural" | "cel" | "riso";
   builderData: BuilderData;
@@ -109,6 +109,7 @@ export function Editor({
           treatment={treatment}
           builderData={builderData}
           transform={transform}
+          orientation={orientation}
           width={width}
           height={height}
         />

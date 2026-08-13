@@ -8,16 +8,15 @@ import { BuilderData } from "../frame/FrameCanvas";
 import { generateBuilderClass } from "@/lib/builder-class/generator";
 import { Sparkles, Download, Share2, Monitor, Smartphone } from "lucide-react";
 
-type Format = "pfp" | "id" | "team" | "vibes" | "sunset" | "postcard" | "adventure";
+type Format = "pfp" | "id" | "team";
 type Theme = "goa" | "night" | "sand";
 type Treatment = "natural" | "cel" | "riso";
 type Orientation = "portrait" | "landscape";
-
 export function Studio() {
   const [activeFormat, setActiveFormat] = useState<Format>("id");
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [orientation, setOrientation] = useState<Orientation>("portrait");
-
+  
   const [theme, setTheme] = useState<Theme>("goa");
   const [treatment, setTreatment] = useState<Treatment>("natural");
 
@@ -82,15 +81,11 @@ export function Studio() {
   const formats: { id: Format; label: string; emoji: string }[] = [
     { id: "pfp", label: "PFP Frame", emoji: "◯" },
     { id: "id", label: "Builder ID", emoji: "▧" },
-    { id: "team", label: "Team Frame", emoji: "◫" },
-    { id: "vibes", label: "Goa Vibes", emoji: "☀" },
-    { id: "sunset", label: "Sunset", emoji: "🌅" },
-    { id: "postcard", label: "Postcard", emoji: "✉" },
-    { id: "adventure", label: "Adventure", emoji: "🗺" }
+    { id: "team", label: "Team Frame", emoji: "◫" }
   ];
 
   // Only show identity section for formats that need it
-  const showIdentity = ["id", "team", "vibes", "sunset", "postcard", "adventure"].includes(activeFormat);
+  const showIdentity = ["id", "team"].includes(activeFormat);
 
   // Section animation config
   const sectionVariants = {
@@ -121,7 +116,7 @@ export function Studio() {
       <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-20">
 
         {/* LEFT: Live Preview (Sticky) */}
-        <section className="order-1 lg:order-1 lg:sticky lg:top-20 w-full lg:w-[45%] flex flex-col">
+        <section className="order-1 lg:order-1 lg:sticky lg:top-28 w-full lg:w-[45%] flex flex-col self-start">
           <motion.div
             className="glass-card p-4 md:p-6 rounded-2xl border border-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.3)]"
             layout
@@ -192,7 +187,7 @@ export function Studio() {
               <span className="font-mono text-lg uppercase tracking-widest text-black font-bold">01</span>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+            <div className="grid grid-cols-3 gap-2.5">
               {formats.map((f, i) => (
                 <motion.button
                   key={f.id}
