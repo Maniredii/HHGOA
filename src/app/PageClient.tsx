@@ -231,7 +231,7 @@ export default function PageClient() {
             >
               <span className="font-mono text-[10px] text-[var(--color-hh-cream)]/40 uppercase tracking-widest">built by</span>
               <span className="animated-underline font-serif text-lg font-bold text-[var(--color-hh-yellow)] tracking-wide">
-                Exceed
+                Limit Exceed
               </span>
             </motion.div>
           </div>
@@ -429,7 +429,7 @@ export default function PageClient() {
             {/* Center: Team */}
             <div className="text-center">
               <p className="font-mono text-[9px] uppercase tracking-widest text-white/30 mb-1">a project by</p>
-              <p className="font-serif text-lg font-bold text-[var(--color-hh-yellow)] animated-underline">Exceed</p>
+              <p className="font-serif text-lg font-bold text-[var(--color-hh-yellow)] animated-underline">Limit Exceed</p>
             </div>
 
             {/* Right: Links */}
@@ -459,7 +459,7 @@ export default function PageClient() {
           {/* Bottom bar */}
           <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="font-mono text-[9px] text-white/20 uppercase tracking-widest">
-              © 2026 Exceed · HH Goa
+              © 2026 Limit Exceed · HH Goa
             </p>
             <p className="font-mono text-[9px] text-white/20 uppercase tracking-widest">
               #FrameInGoa
