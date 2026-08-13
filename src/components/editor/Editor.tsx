@@ -107,12 +107,16 @@ export function Editor({
       </div>
 
       {imageUrl && (
-        <div className="mt-4 flex gap-2">
-          <Button variant="outline" size="sm" onClick={resetTransform}>
-            <RotateCcw size={16} className="mr-2" /> Reset View
-          </Button>
-          <div className="flex items-center gap-2 bg-white/50 px-3 border border-black/10">
-            <span className="text-xs font-mono text-black/50">Zoom</span>
+        <div className="mt-6 flex flex-col sm:flex-row w-full justify-between gap-4">
+          <button 
+            className="flex-1 neo-button bg-black text-white h-12 flex items-center justify-center text-[10px]"
+            onClick={resetTransform}
+          >
+            <RotateCcw size={14} className="mr-2" /> Reset View
+          </button>
+          
+          <div className="flex-1 bg-white border-2 border-black flex items-center px-4 shadow-[4px_4px_0px_0px_#f5c842] h-12">
+            <span className="text-[10px] font-mono text-black font-bold uppercase tracking-widest mr-4">Zoom</span>
             <input
               type="range"
               min="0.1"
@@ -125,7 +129,7 @@ export function Editor({
                   scale: parseFloat(e.target.value),
                 }))
               }
-              className="w-24 accent-[var(--color-hh-pink)]"
+              className="w-full accent-[var(--color-hh-pink)]"
             />
           </div>
         </div>
